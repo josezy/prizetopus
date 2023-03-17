@@ -60,9 +60,6 @@ Solana program to distribute the prize pool of a tournament (ie. poker)
 
 ## 4. Instructions
 
-- create_prize_distribution (called by participant)
-  - prize_distribution_address
-  - distribution
 
 - create_tournament (called by participant)
   - tournament_address
