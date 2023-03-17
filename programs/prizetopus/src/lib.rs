@@ -22,8 +22,11 @@ pub mod prizetopus {
         instructions::init_tournament::handler(ctx, prize_pool_bump, prize_distribution_bump, buy_in, max_players, timeout)
     }
 
-    pub fn join_tournament(_ctx: Context<Initialize>) -> Result<()> {
-        Ok(())
+    pub fn join_tournament(
+        ctx: Context<JoinTournament>,
+        player_state_bump: u8,
+    ) -> Result<()> {
+        instructions::join_tournament::handler(ctx, player_state_bump)
     }
     
     pub fn start_tournament(_ctx: Context<Initialize>) -> Result<()> {
