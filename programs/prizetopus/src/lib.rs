@@ -11,17 +11,15 @@ declare_id!("Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS");
 pub mod prizetopus {
     use super::*;
 
-    pub fn init_prize_pool(ctx: Context<Initialize>) -> Result<()> {
-        Ok(())
-    }
-
-    pub fn init_prize_distribution(ctx: Context<Initialize>) -> Result<()> {
-        Ok(())
-    }
-
-    pub fn init_tournament(ctx: Context<Initialize>) -> Result<()> {
-        instruction::InitTournament::
-        Ok(())
+    pub fn init_tournament(
+        ctx: Context<InitTournament>,
+        prize_pool_bump: u8,
+        prize_distribution_bump: u8,
+        buy_in: u64,
+        max_players: u64,
+        timeout: u64,
+    ) -> Result<()> {
+        instructions::init_tournament::handler(ctx, prize_pool_bump, prize_distribution_bump, buy_in, max_players, timeout)
     }
 
     pub fn join_tournament(ctx: Context<Initialize>) -> Result<()> {
