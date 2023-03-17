@@ -53,6 +53,6 @@ pub fn handler(
     max_players: u64,
     timeout: u64,
 ) -> Result<()> {
-
+    msg!("Got into handler");
     Ok(())
 }

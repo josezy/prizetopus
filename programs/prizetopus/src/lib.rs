@@ -30,7 +30,7 @@ pub mod prizetopus {
         instructions::join_tournament::handler(ctx, player_state_bump)
     }
     
-    pub fn start_tournament(ctx: Context<start_tournament::StartTournament>) -> Result<()> {
+    pub fn start_tournament(ctx: Context<StartTournament>) -> Result<()> {
         instructions::start_tournament::handler(ctx)
     }
     

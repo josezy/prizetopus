@@ -5,7 +5,6 @@ use crate::state::*;
 const PREFIX: &str = "virtue_poker";
 
 #[derive(Accounts)]
-#[instruction()]
 pub struct StartTournament<'info> {
 
     // TODO: Check if we need to pass a tournament authority
@@ -15,8 +14,6 @@ pub struct StartTournament<'info> {
 
     #[account(mut)]
     pub payer: Signer<'info>,
-
-    pub rent: Sysvar<'info, Rent>,
 }
 
 pub fn handler(
