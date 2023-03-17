@@ -10,6 +10,7 @@ pub struct InitTournament<'info> {
     #[account(init, payer = payer, space = 8 + std::mem::size_of::<Tournament>())]
     pub tournament: Account<'info, Tournament>,
 
+    /// CHECK: This is not dangerous because we don't read or write from this account
     pub tournament_authority: UncheckedAccount<'info>,
 
     #[account(mut)]
@@ -27,6 +28,8 @@ pub struct InitTournament<'info> {
         payer = payer,
         space = 8
     )]
+
+    /// CHECK: This is not dangerous because we don't read or write from this account
     pub prize_pool: UncheckedAccount<'info>,
 
     #[account(
@@ -46,13 +49,12 @@ pub struct InitTournament<'info> {
 }
 
 pub fn handler(
-    ctx: Context<InitTournament>,
-    prize_pool_bump: u8,
-    prize_distribution_bump: u8,
-    buy_in: u64,
-    max_players: u64,
-    timeout: u64,
+    _ctx: Context<InitTournament>,
+    _prize_pool_bump: u8,
+    _prize_distribution_bump: u8,
+    _buy_in: u64,
+    _max_players: u64,
+    _timeout: u64,
 ) -> Result<()> {
-
     Ok(())
 }

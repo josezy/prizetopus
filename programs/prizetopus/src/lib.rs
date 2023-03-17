@@ -1,6 +1,6 @@
 use anchor_lang::prelude::*;
 use instructions::*;
-use state::*;
+// use state::*;
 
 pub mod instructions;
 pub mod state;
@@ -22,19 +22,19 @@ pub mod prizetopus {
         instructions::init_tournament::handler(ctx, prize_pool_bump, prize_distribution_bump, buy_in, max_players, timeout)
     }
 
-    pub fn join_tournament(ctx: Context<Initialize>) -> Result<()> {
+    pub fn join_tournament(_ctx: Context<Initialize>) -> Result<()> {
         Ok(())
     }
     
-    pub fn start_tournament(ctx: Context<Initialize>) -> Result<()> {
+    pub fn start_tournament(_ctx: Context<Initialize>) -> Result<()> {
         Ok(())
     }
     
-    pub fn eliminate_player(ctx: Context<Initialize>) -> Result<()> {
+    pub fn eliminate_player(_ctx: Context<Initialize>) -> Result<()> {
         Ok(())
     }
     
-    pub fn claim_prize(ctx: Context<Initialize>) -> Result<()> {
+    pub fn claim_prize(_ctx: Context<Initialize>) -> Result<()> {
         Ok(())
     }
     
