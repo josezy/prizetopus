@@ -20,6 +20,7 @@ pub mod prizetopus {
     }
 
     pub fn init_tournament(ctx: Context<Initialize>) -> Result<()> {
+        instruction::InitTournament::
         Ok(())
     }
 
