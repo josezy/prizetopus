@@ -9,6 +9,7 @@ declare_id!("Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS");
  
 #[program]
 pub mod prizetopus {
+
     use super::*;
 
     pub fn init_tournament(
@@ -29,8 +30,8 @@ pub mod prizetopus {
         instructions::join_tournament::handler(ctx, player_state_bump)
     }
     
-    pub fn start_tournament(ctx: Context<Initialize>) -> Result<()> {
-        Ok(())
+    pub fn start_tournament(ctx: Context<start_tournament::StartTournament>) -> Result<()> {
+        instructions::start_tournament::handler(ctx)
     }
     
     pub fn eliminate_player(ctx: Context<Initialize>) -> Result<()> {
