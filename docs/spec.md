@@ -21,7 +21,7 @@ Solana program to distribute the prize pool of a tournament (ie. poker)
 
 2. Participants register
   - pass wallet
-  - pass PDA for player balance (which holds chips)
+  - pass PDA for player state
 
 3. TO starts the tournament
   - joining locked after that
@@ -44,17 +44,54 @@ Solana program to distribute the prize pool of a tournament (ie. poker)
   - prize_pool_address
   - buy_in
   - max_participants
-  - current_participants
-  - starting_participants
+  - current_participants (needed?)
   - started
   - timeout
   - prize_distribution_address
-  - starting_chips
 - prize_distribution
   - array of n numbers adding up to 100
-- player_balance
-  - last_update
-  - chips
+- player_state
+  - eliminated?
 - voting_proposal
   - new_distribution_address
   - store votes / signers
+
+## 4. Instructions
+
+- create_prize_distribution (called by participant)
+  - prize_distribution_address
+  - distribution
+
+- create_tournament (called by participant)
+  - tournament_address
+  - prize_pool_address
+  - buy_in
+  - max_participants
+  - timeout
+  - prize_distribution_address
+
+- register_player (called by participant)
+  - tournament_address
+  - player_state_address
+  - player_wallet_address
+
+- start_tournament (called by TO)
+  - tournament_address
+
+- eliminate_player (called by TO)
+  - tournament_address
+  - player_state_address
+
+- propose_distribution_change (called by player)
+  - tournament_address
+  - voting_proposal_address
+
+- vote_distribution_change (called by player)
+  - tournament_address
+  - voting_proposal_address
+
+- claim_prize (called by player)
+  - tournament_address
+  - player_state_address
+  - player_wallet_address
+
